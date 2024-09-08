@@ -5,7 +5,19 @@ on:
       - opened
       - edited
       - synchronize
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
+    paths:
+      - '**.js'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
